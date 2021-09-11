@@ -5,6 +5,9 @@ RSpec.describe Role, type: :model do
 
   describe 'associations' do
     it { should have_many(:swords) }
+    it { should have_many(:items).through(:boxes) }
+    it { should belong_to(:user) }
+    it { should have_one(:skill) }
   end
 
   describe "測試驗證功能" do
@@ -38,6 +41,7 @@ RSpec.describe Role, type: :model do
         role.age = "數字"
         expect(role).to_not be_valid
       end
+
     end
   end
 end
