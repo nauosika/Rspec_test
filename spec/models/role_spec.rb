@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
+  let(:role) { create(:role) }
+
+  describe 'associations' do
+    it { should have_many(:swords) }
+  end
 
   describe "測試驗證功能" do
     context "欄位限制" do
-      let(:role) { create(:role) }
-
       it "name不可以空白" do
         role.name = nil
         expect(role).to_not be_valid
