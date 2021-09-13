@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
-  let(:role) { create(:role) }
+  let!(:role) { create(:role) }
 
   describe 'associations' do
     it { should have_many(:swords) }
@@ -43,5 +43,10 @@ RSpec.describe Role, type: :model do
       end
 
     end
+  end
+
+  describe "#attack_power" do
+    it "基本攻擊力等於力量*10"
+    it "真正攻擊力等基本攻擊力*武器DPS"
   end
 end
