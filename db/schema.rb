@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_13_062407) do
+ActiveRecord::Schema.define(version: 2021_09_13_113201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_09_13_062407) do
     t.integer "power"
     t.integer "attack_power"
     t.integer "really_attack_power"
+    t.integer "sword_dps"
   end
 
   create_table "skills", force: :cascade do |t|
